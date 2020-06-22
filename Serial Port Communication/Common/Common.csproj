@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="Enums\FrameFormat.cs" />
+    <Compile Include="Enums\SelectedTerminator.cs" />
+    <Compile Include="Enums\StandardTerminator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelayCommand.cs" />
   </ItemGroup>

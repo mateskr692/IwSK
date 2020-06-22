@@ -13,5 +13,13 @@ namespace Serial_RS232
     /// </summary>
     public partial class App : Application
     {
+        private Window _currentwindow { get; set; }
+
+        protected override void OnStartup( StartupEventArgs e )
+        {
+            base.OnStartup( e );
+            var window = new MainWindow();
+            window.Show();
+        }
     }
 }

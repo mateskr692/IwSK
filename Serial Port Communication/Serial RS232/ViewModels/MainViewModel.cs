@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO.Ports;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Common;
 
@@ -36,7 +33,7 @@ namespace Serial_RS232
                 MessageBox.Show( "Nie znaleziono portu szeregowego" );
             this.SelectedPort = this?.Ports[ 0 ];
 
-            this.TransmisionSpeeds = new int[] { 110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000, 256000 };
+            this.TransmisionSpeeds = new int[] { 150, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200 };
             this.SelectedTransmissionSpeed = 9600;
 
             this.DataBits = new int[] { 5, 6, 7, 8 };
@@ -105,9 +102,29 @@ namespace Serial_RS232
                 }
             } }
 
+        //private bool _TransactionEnabled;
+        //public bool TransactionEnabled { get => this._TransactionEnabled; set {
+        //        this._TransactionEnabled = value;
+        //        this.Port.ReadTimeout = value ? this._TransactionTimeout : SerialPort.InfiniteTimeout;
+        //        this.Port.WriteTimeout = value ? this._TransactionTimeout : SerialPort.InfiniteTimeout;
+        //        this.OnPropertyChanged();
+        //        this.OnPropertyChanged( "Timeout" );
+        //    }
+        //}
+
+        //private int _TransactionTimeout = 500;
+        //public int TransactionTimeout { get => this._TransactionTimeout; set {
+        //        this._TransactionTimeout = value > 0 ? value : 1;
+        //        this.Port.ReadTimeout = this._TransactionTimeout;
+        //        this.Port.WriteTimeout = this._TransactionTimeout;
+        //        this.OnPropertyChanged();
+        //        this.OnPropertyChanged( "Timeout" );
+        //    } }
+
+        //public int Timeout { get => this.Port.WriteTimeout; }
+
         private string _RecievedData;
         public string RecievedData { get => this._RecievedData; set { this._RecievedData = value; this.OnPropertyChanged(); } }
-
         public string BufforData { get; set; }
         #endregion
 

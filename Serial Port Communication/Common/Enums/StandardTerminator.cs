@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Serial_RS232
+namespace Common
 {
-    public enum SelectedTerminator
+    public enum StandardTerminator
     {
-        None,
-        Custom,
-        Standard
+        CR,     //  \r
+        LF,     //  \n
+        CRLF    //  \r\n
     }
 }

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Serial_RS232
+namespace Common
 {
-    public enum StandardTerminator
+    public enum FrameFormat
     {
-        CR,     //  \r
-        LF,     //  \n
-        CRLF    //  \r\n
+        _7E1,
+        _7O1,
+        _7N2
     }
 }

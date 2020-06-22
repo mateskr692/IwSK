@@ -10,7 +10,7 @@
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
@@ -42,10 +42,14 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="5"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="5"/>
+                <RowDefinition Height="15"/>
+                
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="5"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="auto"/>
+
 
             </Grid.RowDefinitions>
 
@@ -90,13 +94,12 @@
                 </Grid>
             </StackPanel>
 
+            <!--<CheckBox Grid.Row="16" Content="Tryb transakcji" IsChecked="{Binding Path=TransactionEnabled}" />
+            <TextBlock Grid.Row="18" Grid.Column="0" Text="Timeout [ms]"/>
+            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Path=TransactionTimeout, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=TransactionEnabled}"/>-->
+
             <Button Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding Path=ConnectionStatus}"  Command="{Binding Path=ConnectCommand}"/>
             <Button Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="2" Content="Ping" Command="{Binding Path=PingCommand}"/>
-
-            <!--<TextBlock Grid.Row="20" Grid.Column="0" Text="Status: "/>
-            <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding Path=ConnectionStatus}"/>-->
-
-            <!--<TextBlock Grid.Row="20" Text="{Binding Path=Terminator, Mode=OneWay}"/>-->
         </Grid>
 
 
@@ -119,8 +122,11 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="Odbiór"/>
+            
             <ScrollViewer Grid.Row="2">
-                <TextBlock TextWrapping="Wrap" Text="{Binding Path=RecievedData, Mode=OneWay}"/>
+                <Border BorderThickness="1" BorderBrush="DarkGray">
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Path=RecievedData, Mode=OneWay}"/>
+                </Border>
             </ScrollViewer>
             <Button Grid.Row="4" Content="Wyczyść" Command="{Binding Path=ClearCommand}"/>
 
