@@ -45,9 +45,11 @@ namespace Serial_Modbus
 
             this.Commands = new int[] { 1, 2 };
             this.SelectedCommand = 1;
-            this.FrameTimeout = 100;
-            this.TransactionTimeout = 5000;
+            this.FrameTimeout = 20;
+            this.TransactionTimeout = 2000;
             this.Retransmitions = 2;
+
+            this.Adress = 1;
 
             this.ConnectCommand = new RelayCommand( this.OnConnectCommand );
             this.SendCommand = new RelayCommand( this.OnSendCommand, new Predicate<object>( o => this.IsConnected ) );
@@ -124,6 +126,7 @@ namespace Serial_Modbus
             {
                 this._BufforData = value;
                 this.UpdateBufforedData();
+                this.OnPropertyChanged();
             }
         }
 
@@ -322,6 +325,7 @@ namespace Serial_Modbus
             else
             {
                 this.AdressEnabled = true;
+                this.Adress = 1;
             }
         }
 

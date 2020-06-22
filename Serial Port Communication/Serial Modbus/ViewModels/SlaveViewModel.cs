@@ -37,7 +37,7 @@ namespace Serial_Modbus
             this.SelectedControlType = Handshake.None;
 
             this.Adress = 1;
-            this.FrameTimeout = 100;
+            this.FrameTimeout = 20;
 
             this.ConnectCommand = new RelayCommand( this.OnConnectCommand );
         }
