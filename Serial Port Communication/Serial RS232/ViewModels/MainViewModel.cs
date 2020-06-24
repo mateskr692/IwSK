@@ -25,8 +25,8 @@ namespace Serial_RS232
         {
             this.Port = new SerialPort();
             this.Port.DataReceived += this.OnRecieved;
-            this.Port.DiscardNull = false;
-            this.Port.DtrEnable = true;
+            //this.Port.DiscardNull = false;
+            //this.Port.DtrEnable = true;
 
             this.Ports = SerialPort.GetPortNames();
             if ( this.Ports.Count() == 0 )
@@ -177,6 +177,7 @@ namespace Serial_RS232
         public RelayCommand PingCommand { get; private set; }
         public void OnPingCommand(object o)
         {
+            this.Stopwatch.Start();
             this.Send( this.PingMessage + this.Terminator );
         }
 
